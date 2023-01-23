@@ -18,5 +18,13 @@
     <ClCompile Include="Banking_System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Auth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Auth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
