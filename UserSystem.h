@@ -1,17 +1,22 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <fstream>
 #include <map>
-#include "json.hpp"
+#include "nlohmann/json.hpp"
 using std::map;
 using std::string;
 using std::pair;
-using json = basic_json::json;
+using std::ofstream;
+using std::ifstream;
+using json = nlohmann::json;
 class UserSystem {
 private:
-	map<string, string> users{ {"kale", "pass"} };
-	map<string, float> accounts{ {"kale", 100} };
+	map<string, string> users;
+	map<string, int> accounts;
 	string currentUser = "";
+	json userDB;
+	json accountDB;
 public:
 	void serialize();
 	void deserialize();

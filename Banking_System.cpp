@@ -26,7 +26,6 @@ void registerStep() {
 		system("pause");
 	}
 	cout << "Please input your password." << endl;
-	cin.ignore();
 	getline(cin, password);
 	userSystem.userRegister(username, password);
 	userSystem.setCurrentUser(username);

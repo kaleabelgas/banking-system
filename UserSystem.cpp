@@ -1,15 +1,27 @@
 #include "UserSystem.h"
 
 void UserSystem::serialize(){
-
+	userDB = users;
+	accountDB = accounts;
+	ofstream userout("userDB.json");
+	userout << std::setw(4) << userDB << std::endl;
+	ofstream accout("accountDB.json");
+	accout << std::setw(4) << accountDB << std::endl;
 }
 
 void UserSystem::deserialize(){
+	ifstream userin("userDB.json");
+	userin >> userDB;
+	users = userDB.get<map<string, string>>();
+	ifstream accin("accountDB.json");
+	accin >> accountDB;
+	accounts = accountDB.get<map<string, int>>();
 }
 
 void UserSystem::userRegister(string username, string password) {
 	users.insert(pair<string, string>(username, password));
 	accounts.insert({username, 0});
+	serialize();
 }
 
 bool UserSystem::checkUser(string username) {
