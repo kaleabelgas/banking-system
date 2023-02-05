@@ -128,11 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Auth.cpp" />
+    <ClCompile Include="UserSystem.cpp" />
     <ClCompile Include="Banking_System.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Auth.h" />
+    <ClInclude Include="UserSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

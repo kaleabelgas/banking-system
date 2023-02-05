@@ -18,12 +18,12 @@
     <ClCompile Include="Banking_System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Auth.cpp">
+    <ClCompile Include="UserSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Auth.h">
+    <ClInclude Include="UserSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
