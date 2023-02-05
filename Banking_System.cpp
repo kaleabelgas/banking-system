@@ -9,7 +9,6 @@ using std::string;
 using std::streamsize;
 using std::numeric_limits;
 
-
 UserSystem userSystem;
 void errorMessage(string error) {
 	cout << "Error: " << error << endl;
@@ -168,7 +167,6 @@ void transactStep() {
 
 	}
 }
-
 
 int main() {
 	while(true)	{

@@ -43,10 +43,10 @@ int UserSystem::checkBalance() {
 
 void UserSystem::withdraw(int amount) {
 	accounts.at(currentUser) = accounts.at(currentUser) - amount;
+	serialize();
 }
-
 
 void UserSystem::deposit(int amount) {
 	accounts.at(currentUser) = accounts.at(currentUser) + amount;
-
+	serialize();
 }
