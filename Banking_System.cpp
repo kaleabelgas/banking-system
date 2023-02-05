@@ -169,6 +169,7 @@ void transactStep() {
 }
 
 int main() {
+	userSystem.deserialize();
 	while(true)	{
 		login();
 		transactStep();
