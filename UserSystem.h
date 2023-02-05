@@ -2,9 +2,11 @@
 #include <string>
 #include <iostream>
 #include <map>
+#include "json.hpp"
 using std::map;
 using std::string;
 using std::pair;
+using json = basic_json::json;
 class UserSystem {
 private:
 	map<string, string> users{ {"kale", "pass"} };
