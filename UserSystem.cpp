@@ -1,5 +1,12 @@
 #include "UserSystem.h"
 
+void UserSystem::serialize(){
+
+}
+
+void UserSystem::deserialize(){
+}
+
 void UserSystem::userRegister(string username, string password) {
 	users.insert(pair<string, string>(username, password));
 	accounts.insert({username, 0});

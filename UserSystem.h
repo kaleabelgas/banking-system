@@ -11,11 +11,12 @@ private:
 	map<string, float> accounts{ {"kale", 100} };
 	string currentUser = "";
 public:
+	void serialize();
+	void deserialize();
 	void userRegister(string username, string password);
 	bool checkUser(string username);
 	bool checkPassword(string username, string password);
 	void setCurrentUser(string username);
-	string getCurrentUser();
 	void withdraw(int amount);
 	int checkBalance();
 	void deposit(int amount);

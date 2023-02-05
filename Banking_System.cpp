@@ -15,14 +15,15 @@ void errorMessage(string error) {
 	cout << "Error: " << error << endl;
 }
 void registerStep() {
-	system("cls");
 	string username, password;
+	cin.ignore();
 	while (true) {
+		system("cls");
 		cout << "Please input your username." << endl;
-		cin.ignore();
 		getline(cin, username);
 		if (!userSystem.checkUser(username)) break;
 		errorMessage("User already exists!");
+		system("pause");
 	}
 	cout << "Please input your password." << endl;
 	cin.ignore();
@@ -34,14 +35,18 @@ void registerStep() {
 }
 
 void login() {
+	system("cls");
 	cout << "Welcome! Login with your username and password, or register a new account." << endl 
 		<< "1. Login" << endl 
-		<< "2. Register" << endl;
+		<< "2. Register" << endl
+		<< "3. Exit" << endl;
 	while (true) {
 		int userInput = -1;
 		string username, password;
 		cin >> userInput;
-		if (userInput == 1) {
+
+		switch (userInput) {
+		case 1:
 			system("cls");
 			cout << "Please input your username." << endl;
 			cin >> username;
@@ -64,21 +69,23 @@ void login() {
 						errorMessage("Wrong password...");
 						continue;
 					}
-
 				}
 			}
 			break;
-		}
-		else if (userInput == 2) {
+		case 2:
 			registerStep();
 			break;
-		}
-		else {
+		case 3:
+			cout << "Thank you!" << endl;
+			exit(0);
+			break;
+		default:
 			errorMessage("Invalid input!");
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			continue;
 		}
+		break;
 	}
 }
 
@@ -124,7 +131,7 @@ void transactStep() {
 			<< "1. Check balance" << endl
 			<< "2. Deposit" << endl
 			<< "3. Withdraw" << endl
-			<< "4. Exit" << endl;
+			<< "4. Logout" << endl;
 		cin >> userInput;
 		switch (userInput) {
 		case 1:
@@ -145,7 +152,12 @@ void transactStep() {
 			continue;
 		case 4:
 			system("cls");
-			cout << "Thank you!" << endl;
+			cout << "Logging out.";
+			Sleep(500);
+			cout << ".";
+			Sleep(500);
+			cout << ".";
+			Sleep(500);
 			break;
 		default:
 			system("cls");
@@ -160,6 +172,8 @@ void transactStep() {
 
 
 int main() {
-	login();
-	transactStep();
+	while(true)	{
+		login();
+		transactStep();
+	}
 }
